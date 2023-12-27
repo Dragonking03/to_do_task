@@ -1,0 +1,11 @@
+<%- include("partial/header.ejs") %>
+
+<h2>Logging Out...</h2>
+
+<script>
+  setTimeout(() => {
+    window.location.href = '/logout'; // Redirect to the logout route after displaying the message
+  }, 1000); // Adjust the delay as needed
+</script>
+
+<%- include("partial/footer.ejs") %>

@@ -1,0 +1,32 @@
+<%- include("partial/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Project</title>
+</head>
+<body>
+    <h1>COMPOSE</h1>
+    <form class="" action="/compose" method="post">
+        <form>
+            <div class="mb-3">
+              <label for="TitleSubmission" class="form-label">Task</label>
+              <input type="text" class="form-control"  aria-describedby="titleHelp" name="taskTitle" >
+            </div>
+            <div class="mb-3">
+              <label for="Posting" class="form-label">Description</label>
+              <textarea name="post" rows="3" cols="155" class="form-control"></textarea>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="" for="gap"></label>
+              </div>
+            <button type="submit" class="btn btn-primary">Publish</button>
+        </form>    
+    </form> 
+    
+</body>
+</html>
+
+<%- include("partial/footer.ejs") %>

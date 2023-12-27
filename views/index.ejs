@@ -1,0 +1,100 @@
+<%- include("partial/header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>To DO Project</title>
+
+    <style>
+       
+       .cut-title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+            /*transition: width 0.3s ease-out; /* Add a smooth transition effect */
+        }
+
+        .cut-checkbox:checked + .input-container + .cut-container .cut-title {
+            width: 50%; /* Adjust the percentage to control the cut width */
+            background-color: white;
+            text-decoration: line-through;
+        }
+       
+       .row{
+            display: flex;
+            justify-content: center;
+            background-color: #04ffcd;
+            margin-left: 400px;
+            margin-right: 400px;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            box-shadow: 0 4px 8px rgb(3, 0, 0);
+        }
+
+        .list-unstyled li {
+        display: flex;
+        align-items: center;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: end;
+        }
+
+        .button-container {
+            text-align: center; /* Center the button horizontally */
+            }
+
+        .w-100 {
+            box-shadow: 0 2px 4px rgba(101, 2, 155, 0.141); /* Add shadow to the button */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h1>To Do List</h1>
+                </div>
+                <div class="card-body">
+                    
+                    <ul class="list-unstyled mt-3 mb-4">
+                        
+                        <% task.forEach(item => { %>
+                            <li>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="cut-container">
+                                      <h2 class="cut-title" style="margin-right: 10px;"><%= item.title %></h2>
+                                      <p style="margin-top: 5px;">
+                                        <%= item.content.split("").slice(0, 30).join("") + "..." %>
+                                        <a href="task/<%= item.title %>">Read More</a>
+                                      </p>
+                                    </div>
+                                    <div class="input-container">
+                                      <input type="checkbox" id="<%= item.title %>" class="cut-checkbox">
+                                    </div>
+                                  </div>
+                                  
+                            </li>
+                          <% }); %>                          
+                    </ul>
+                    <div class="button-container">
+                        <button type="button" class="w-100 btn btn-lg btn-primary">
+                            <a href="/compose" style="color: white;">Add Task</a>
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<%- include("partial/footer.ejs") %>

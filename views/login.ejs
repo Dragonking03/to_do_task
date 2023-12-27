@@ -1,0 +1,23 @@
+<%- include("partial/header.ejs") %>
+
+<h2>Log In</h2>
+
+<form>
+  <div class="form-floating">
+    <input type="userid" class="form-control" id="floatingInput" placeholder="UserId" style="width: 50%;">
+    <label for="floatingInput">User Id</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="width: 50%;">
+    <label for="floatingPassword">Password</label>
+  </div>
+
+  <div class="form-check text-start my-3">
+    <button class="btn btn-primary py-2" type="submit">Log In</button>
+    <label class="form-check-label" for="flexCheckDefault">
+      <a href="/signin" class="btn btn-link"><button type="button" class="btn btn-primary">Sign-up</button></a>
+    </label>
+  </div>
+</form>
+
+<%- include("partial/footer.ejs") %>

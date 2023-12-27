@@ -1,0 +1,17 @@
+<%- include("partial/header.ejs") %>
+
+<h2>Sign In</h2>
+
+<form action="/login" method="post">
+  <div class="form-floating">
+    <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username" style="width: 50%;">
+    <label for="floatingInput">Username</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" style="width: 50%;">
+    <label for="floatingPassword">Password</label>
+  </div>
+  <button class="btn btn-primary" type="submit">Sign In</button>
+</form>
+
+<%- include("partial/footer.ejs") %>
